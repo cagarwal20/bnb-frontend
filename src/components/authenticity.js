@@ -14,6 +14,7 @@ import { Outlet, Link } from "react-router-dom";
 import axios from "axios";
 import { hover } from "@testing-library/user-event/dist/hover";
 import { Slide } from 'react-slideshow-image';
+import {Alert,Button} from 'antd';
 
 
 function Authenticity()
@@ -31,7 +32,7 @@ function Authenticity()
 		.then(res => {
 			if(res.data["success"]=="authentic")
             {   
-                alert('Original');
+                alert('original')
                 setAuth(true);
                 setColor("success");
                 window.location.reload();  
@@ -115,6 +116,7 @@ function Authenticity()
                     <div>
                         <h class="f">Available on</h>
                         <div><Link to="https://www.flipkart.com/">Flipkart</Link></div>
+                        <div><faTwitter/></div>
                         <div><Link to="https://www.amazon.in/">Amazon</Link></div>
                         <div><Link to="https://www.snapdeal.in/">Snapdeal</Link></div>
                     </div>

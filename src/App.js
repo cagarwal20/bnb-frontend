@@ -13,6 +13,7 @@ import About_Us_FAQ from './components/about-us-faqs';
 import About_Us_Mission from './components/about-us-mission';
 import About_Us_Journey from './components/about-us-journey';
 import Cart from './components/cart';
+import Complaint from './components/complaints';
 function App() {
     const [code,setCode] = useState(0)
 
@@ -32,6 +33,7 @@ function App() {
         <Route path="/about-us/journey" element={<About_Us_Journey/>}/>
         <Route path="/about-us/mission" element={<About_Us_Mission/>}/>
         <Route path="/cart" element={<Cart/>}/>
+        <Route path="/contact-us/redressal" element={<Complaint/>}/>
       </Routes>
   </BrowserRouter> 
     );

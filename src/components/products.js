@@ -11,7 +11,11 @@ import {
     faInstagram
   } from "@fortawesome/free-brands-svg-icons";
 import { Outlet, Link } from "react-router-dom";
+import { Carousel ,Dropdown,Space} from "antd";
+import { DownOutlined, SmileOutlined } from '@ant-design/icons';
 import axios from "axios";
+import  { MenuProps } from "antd";
+
 class Product extends Component
 {
     constructor(props) {
@@ -19,6 +23,7 @@ class Product extends Component
         this.slideRef = React.createRef();
         this.state = {
           data : [],
+          variant_data:[],
           product : "",
         }
     };
@@ -33,6 +38,17 @@ class Product extends Component
                 product : data.product_type,
 
 			});
+		})
+		.catch(err => {})
+        let variant_data;
+        axios.get('http://localhost:8000/products/variant/' , { params: { asset_type: this.props.asset_type } })
+		.then(res => {
+			variant_data = res.data.data;
+			this.setState({
+				variant_data : variant_data,
+
+			});
+            console.log(variant_data)
 		})
 		.catch(err => {})
     };
@@ -65,11 +81,22 @@ class Product extends Component
                         <div>   
                             <div>
                                 <section>
-                                    <div class="pl-1"><img src="https://cdn.pixabay.com/photo/2022/12/16/01/41/balloons-7658766_960_720.jpg"></img></div>
+                                    <Carousel >
+                                        <div class="pl-1"><img src={data.image_url}></img></div>
+                                        <div class="pl-1"><img src={data.image_url}></img></div>
+                                    </Carousel>
                                     <text class="products-list">{data.product_type} {data.flavour} flavour!</text>
                                     <text class="products-list">{data.size}</text>
                                     <text class="products-list-dis">Rs.{data.mrp}</text> <text class="products-list">{data.discount}%</text>                                  
                                     <text class="products-list">Rs.{data.price}</text>
+                                    <Dropdown menu={{items:this.state.variant_data}}>
+                                        <a onClick={(e) => e.preventDefault()} trigger={['click']}>
+                                        <Space class="dd">
+                                            Hover me
+                                            <DownOutlined />
+                                        </Space>
+                                        </a>
+                                    </Dropdown>
                                 </section>
                             </div>
                         </div>  

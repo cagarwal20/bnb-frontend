@@ -15,7 +15,7 @@ import axios from "axios";
 import { hover } from "@testing-library/user-event/dist/hover";
 import { Slide } from 'react-slideshow-image';
 import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
-
+import { QRCode } from 'antd';
 
 class Homepage extends Component
 {
@@ -79,7 +79,7 @@ class Homepage extends Component
     return (     
         <div class="main-page">
                 <section class="home-page-top">
-                    <div class="logo-right"><img src="https://cdn.pixabay.com/photo/2022/12/16/01/41/balloons-7658766_960_720.jpg"></img></div>
+                    <div class="logo-right"><img src="bnb13.PNG"></img></div>
                     
                     <span><a href="/">Home</a></span>
                     <div class="dropdown">
@@ -100,7 +100,15 @@ class Homepage extends Component
                             <a href="/reviews">Reviews</a>
                         </div>
                     </div>
-                    <span><a href="/contact-us">Contact</a></span>
+                    <div class="dropdown">
+                        <span><a>Contact</a></span>
+                        <div class="dropdown_item">
+                            <a href="/contact-us/redressal/">Complaints</a>
+                            <a href="/contact-us/business-enquiries/">Business enquiries</a>
+                            <a href="/contact-us/reach-us/">Call/Email/Whatsapp</a>
+                        </div>
+
+                    </div>
                     <span ><a class="cart" href="/cart"><ShoppingCartIcon/></a></span>
                     
                 </section>
@@ -123,9 +131,9 @@ class Homepage extends Component
             
                 <p class="team">Our Products</p>
                 <section class="images">
-                    <li><img src="https://cdn.pixabay.com/photo/2022/12/16/01/41/balloons-7658766_960_720.jpg" width={400} alt="jj"></img><figcaption class="a">Whey protein 4.6 Ratings 1261 Reviews</figcaption></li>
-                    <li><img src="https://cdn.pixabay.com/photo/2022/12/16/01/41/balloons-7658766_960_720.jpg" width={400} alt="jj"></img><figcaption class="b">Creatine 4.7 Ratings 971 Reviews</figcaption></li>
-                    <li><img src="https://cdn.pixabay.com/photo/2022/12/16/01/41/balloons-7658766_960_720.jpg" width={400} alt="kj"></img><figcaption class="c">Pre Workout 4.3 Ratings 761 Reviews</figcaption></li>
+                    <li><img src="bnb11.jpeg" width={400} alt="jj"></img><figcaption class="a">Whey protein 4.6 Ratings 1261 Reviews</figcaption></li>
+                    <li><img src="bnb12.jpeg" width={400} alt="jj"></img><figcaption class="b">Creatine 4.7 Ratings 971 Reviews</figcaption></li>
+                    <li><img src="bnb11.jpeg" width={400} alt="kj"></img><figcaption class="c">Pre Workout 4.3 Ratings 761 Reviews</figcaption></li>
                 </section>
                 <p class="team">Managed with Muscled Toned by Trainers</p>
                 <section class="home-page-bottom">
@@ -177,7 +185,12 @@ class Homepage extends Component
                         <h class="h">Reach us at</h>
                         <div>xyz@gmail.com</div>
                         <div>011-123456</div>
-                        <div></div>
+                        
+                    </div>
+                    <div>
+                        <h class="i">Scan the qr code to spread the love</h>
+                        <div class="i"><faTwitter/></div>
+                        <div><QRCode value="https://google.com/"/></div>
                     </div>
                 </section>
         </div>

@@ -225,27 +225,35 @@ ul {
 }
 .footer .e{
     display: flex;
-    color: white;
+    color: mediumslateblue;
     font-weight: bold;
     padding-bottom: 20px;
 }
 .footer .g{
     display: flex;
-    color: white;
+    color: mediumseagreen;
     font-weight: bold;
     padding-bottom: 20px;
 }
 .footer .f{
     display: flex;
-    color: white;
+    color: black;
     font-weight: bold;
     padding-bottom: 20px;
 }
 .footer .h{
     display: flex;
-    color: white;
+    color: magenta;
     font-weight: bold;
     padding-bottom: 20px;
+    padding-top: 20px;
+}
+.footer .i{
+    display: flex;
+    color: maroon;
+    font-weight: bold;
+    padding-bottom: 20px;
+    padding-top: 20px;
 }
 
 

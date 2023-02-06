@@ -282,3 +282,11 @@ ul {
 
   }
 
+.cart{
+    position: absolute;
+  right: -20px;
+  width: 100px;
+  height: 120px;
+
+}
+

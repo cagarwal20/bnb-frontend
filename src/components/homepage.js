@@ -14,6 +14,7 @@ import { Outlet, Link } from "react-router-dom";
 import axios from "axios";
 import { hover } from "@testing-library/user-event/dist/hover";
 import { Slide } from 'react-slideshow-image';
+import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
 
 
 class Homepage extends Component
@@ -26,10 +27,6 @@ class Homepage extends Component
           data : [],
           data_category : true,
           slideImages : [
-            {
-              url: 'https://images.unsplash.com/photo-1509721434272-b79147e0e708?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80',
-              caption: 'Slide 1'
-            },
             {
               url: 'https://images.unsplash.com/photo-1506710507565-203b9f24669b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1536&q=80',
               caption: 'Slide 2'
@@ -91,10 +88,20 @@ class Homepage extends Component
                             <a href="/products/whey/">Whey</a>
                             <a href="/products/creatine/">Creatine</a>
                             <a href="/products/preworkout/">Pre Workout</a>
+                            <a href="/authenticity/">Check Authenticity</a>
+                        </div>
+                    </div>
+                    <div class="dropdown">
+                        <span><a>About us</a></span>
+                        <div class="dropdown_item">
+                            <a href="/about-us/faqs/">FAQs</a>
+                            <a href="/about-us/journey/">Our Journey</a>
+                            <a href="/about-us/mission/">Mission</a>
+                            <a href="/reviews">Reviews</a>
                         </div>
                     </div>
                     <span><a href="/contact-us">Contact</a></span>
-                    <span><a href="/about">About</a></span>
+                    <span ><a class="cart" href="/cart"><ShoppingCartIcon/></a></span>
                     
                 </section>
             
@@ -162,9 +169,9 @@ class Homepage extends Component
                     </div>
                     <div>
                         <h class="g">Follow Us</h>
-                        <div>Instagram</div>
-                        <div>Facebook</div>
-                        <div>Twitter</div>
+                        <div><Link to="https://www.instagram.com/chetan.20.agrawal/?hl=en">Instagram</Link></div>
+                        <div><Link to="https://www.twitter.com/chetan234/">Twitter</Link></div>
+                        <div><Link to="https://www.facebook.com/">Facebook</Link></div>
                     </div>
                     <div>
                         <h class="h">Reach us at</h>

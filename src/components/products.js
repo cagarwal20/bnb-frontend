@@ -19,6 +19,7 @@ class Product extends Component
         this.slideRef = React.createRef();
         this.state = {
           data : [],
+          product : "",
         }
     };
     componentDidMount(){
@@ -28,7 +29,8 @@ class Product extends Component
             
 			data = res.data.data;
 			this.setState({
-				data : data	
+				data : data,
+                product : data.product_type,
 
 			});
 		})
@@ -58,9 +60,9 @@ class Product extends Component
             </section>
             <img  src="https://cdn.pixabay.com/photo/2022/12/16/01/41/balloons-7658766_960_720.jpg" width={1510} height={1000} alt="kf"></img>
            <section>
+                <p class="products-text">Our Collection</p>
                 {this.state.data.map((data, index)=> (
                         <div>   
-                            <p class="products-text">{data.product_type} Collection</p>
                             <div>
                                 <section>
                                     <div class="pl-1"><img src="https://cdn.pixabay.com/photo/2022/12/16/01/41/balloons-7658766_960_720.jpg"></img></div>

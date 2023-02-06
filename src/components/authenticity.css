@@ -1,0 +1,318 @@
+/* .main-page{
+    background-color: maroon;
+}
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+  }
+  
+  li {
+    float: left;
+  }
+  
+  li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+  li a:hover {
+    background-color: #111;
+  }
+
+.team{
+    align-items:center ;
+    font-size: xx-large;
+    font-style: italic;
+    margin-top: 20px;
+    background-color: #111;
+
+}
+
+.images{
+    display:flex;
+    justify-content: sp;
+}
+.images_bottom{
+    text-align: center;
+    margin-bottom: 100px;
+    margin-top: 8px;
+    padding-left: 120px ;
+    padding-right: 80px;
+    list-style-type: None;
+  
+}
+.images_bottom>li{
+    padding-left: 13px;
+    padding-right: 13px;
+    padding-bottom: 20px;
+
+}
+
+.images>li{
+    padding-left: 13px;
+    padding-right: 13px;
+    padding-bottom: 20px;
+
+} 
+.images>figcaption
+{
+    font: bold;
+}
+.tag_line{
+    font-size: xx-large;
+    text-align: center;
+    flex: auto;
+    padding-bottom: 50px;
+}
+.taggy{
+    font-size: xx-large;
+    text-align: center;
+    flex: auto;
+}
+
+.container{
+    padding-right: 200px;
+    padding-left:200px;
+    list-style-type: None;
+    
+}
+
+.container .button{
+   
+        border:#111;
+        color: maroon;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+      
+}
+.footer{
+    background-color: grey;
+}
+.footer .footer-left{
+    text-align: left;
+    font-size: x-large;
+}
+
+.footer .footer-right{
+    text-align: right;
+    font-size: x-large;
+}
+
+.mid_text{
+    text-align: center;
+} */
+
+
+.home-page-top{
+    background-color: maroon;
+    height: 50px;
+}
+.home-page-top .logo-right{
+    display: flex;
+    justify-content: right;
+}
+
+
+.home-page-top a{
+    text-decoration: none;
+    color: black;
+    font: bold;
+    font-size: x-large;
+}
+
+.mid_text{
+    display: flex;
+    justify-content: center;
+    font-size: large;
+    font-weight:bold;
+}
+
+.team{
+    display: flex;
+    justify-content: center;
+    font-size: xx-large;
+    color: black;
+    background-color: maroon;
+}
+
+.images{
+    display: flex;
+    list-style-type: none;
+    gap: 0px 50px;
+    justify-content: center;
+    padding-bottom: 40px;
+}
+
+.images .a{
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.images .b{
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.images .c{
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.home-page-bottom{
+    display: text;
+    justify-content: center;
+}
+
+.home-page-bottom{
+    display: flex;
+    list-style-type: none;
+    gap: 0px 50px;
+    justify-content: center;
+    padding-bottom: 30px;
+}
+.inspired{
+    background-color: maroon;
+    height: fit-content;
+}
+.inspired .inspired-text{
+    font-weight: bold;
+}
+
+.sm{
+    display: flex;
+    justify-content:baseline;
+    padding-bottom: 15px;
+    padding-top: 30px;
+}
+
+.sign{
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 30px;
+    background-color: maroon;
+}
+
+
+
+.footer{
+    display: flex;
+    justify-content:center ;
+    background-color:maroon;
+    height: 10px;
+}
+
+.footer .d{
+    display: flex;
+    color: white;
+    justify-content:center;
+    font-weight: bold;
+    padding-bottom: 20px;
+}
+.footer .e{
+    display: flex;
+    color: white;
+    font-weight: bold;
+    padding-bottom: 20px;
+}
+.footer .g{
+    display: flex;
+    color: white;
+    font-weight: bold;
+    padding-bottom: 20px;
+}
+.footer .f{
+    display: flex;
+    color: white;
+    font-weight: bold;
+    padding-bottom: 20px;
+}
+.footer .h{
+    display: flex;
+    color: white;
+    font-weight: bold;
+    padding-bottom: 20px;
+}
+
+
+.main-page .home-page-top .logo{
+    display: flex;
+    justify-content: right;
+}
+
+.dropdown_item a:hover {
+    background-color: #f8f8ff
+   }
+
+.dropdown:hover .dropdown_item {
+    display: block;
+  }
+
+.dropdown_item a {
+    display: block;
+    color: black;
+    padding: 10px;
+    text-decoration: none;
+    border-bottom:1px solid white;
+  }
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+
+  .dropdown_item {
+    display: none;
+    position: absolute;
+    background-color: lightgray;
+    min-width: 100%;
+  }
+
+.form{
+    display: flex;
+    justify-content: center;
+    padding-top: 60px;
+    background-color: maroon;
+}
+
+.f_name{
+    font-size: 30px;
+    padding-right: 20px;
+}
+.button-auth{
+    padding-left: 20px;
+    font-size: xx-large;
+}
+
+.jknb{
+    color: green;
+}
+.jknb1{
+    color: red;
+}
+.jknb2{
+    display: flex;
+    justify-content: center;
+    color: green;
+    font-weight: bold;
+    font-size:xx-large
+}
+
+
+.feedback-form{
+    display: flex;
+    justify-content: center;
+}

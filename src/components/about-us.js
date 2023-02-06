@@ -17,6 +17,7 @@ function About_us()
     return (
         <div class="main-page">
             <ul class="home-page-top">
+                <div class="mid-top"></div>
                 <li><a href="default.asp">Home</a></li>
                 <li><a href="news.asp">News</a></li>
                 <li><a href="contact.asp">Contact</a></li>

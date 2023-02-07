@@ -16,7 +16,7 @@ import { hover } from "@testing-library/user-event/dist/hover";
 import { Slide } from 'react-slideshow-image';
 import {  Button, Checkbox, Form, Input  } from 'antd';
 import { RateReviewTwoTone, RemoveTwoTone } from "@material-ui/icons";
-
+import { Carousel ,Dropdown,Space} from "antd";
 function Reviews()
 {
     
@@ -30,6 +30,7 @@ function Reviews()
     const[feedback,setfeedback] = useState();
     const [value,setValue] = useState();
     const[reviews,setreviews] = useState([]);
+    const[rev1,setreview1] = useState({});
     const[slideImages,setslideImages]=useState([
         {
           url: 'https://images.unsplash.com/photo-1509721434272-b79147e0e708?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80',
@@ -62,16 +63,16 @@ function Reviews()
 		.then(res => {
             console.log(res.data.data)
             setreviews(res.data.data);
+            setreview1(res.data.data[0])
 		})
     };
-    reviewloader();
     const handleSubmit = (e) =>{
         e.preventDefault();
         console.log(name);
         console.log(feedback);
         componentDidMount();
     }
-
+    reviewloader();
 
     return (     
         <div class="main-page">
@@ -110,15 +111,17 @@ function Reviews()
                        
                 </div>
                 <div>
-                    
-                        {reviews.map((review,index)=>(
-                            <div class="fgg1">
-                               
-                               <p>{review.name}</p>
-                               <p>{review.feedback}</p>
-                            
-                            </div>
-                        ))}
+                        <Carousel>
+                           
+                                <div>
+                                
+                                        <div>
+                                            <h class="oi">{rev1.name}</h>
+                                        </div>
+                                    
+                                </div>
+                        
+                        </Carousel>
                     
                 </div>
                 <div>

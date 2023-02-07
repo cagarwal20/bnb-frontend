@@ -299,3 +299,15 @@ ul {
 .dd{
     color:white;
 }
+
+.pl{
+    color: white;
+    display: flex;
+    justify-content: center;
+}
+
+
+.dld{
+    display: flex;
+    justify-content: center;
+}

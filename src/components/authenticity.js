@@ -24,7 +24,8 @@ function Authenticity()
     const [submit,submitted] = useState(false);
     const [auth,setAuth] = useState(false);
     const[color,setColor] = useState("failure");
-    const[h,seth] = useState(1); 
+    const[h,seth] = useState(1);
+    const[news,setnews]= useState([]); 
     const componentDidMount = () => {
 
 
@@ -44,6 +45,14 @@ function Authenticity()
             }
 		})
 		.catch(err => {})
+        axios.get('https://live-fitness-and-health-news.p.rapidapi.com/news/',{params:{"newspaperId":"Harvard Health Publishing"},headers:{
+            'X-RapidAPI-Key': '0930f71fc8mshfb60c5b06ee27a7p1dd996jsna79e9df462ea',
+            'X-RapidAPI-Host': 'live-fitness-and-health-news.p.rapidapi.com'
+          }}).then(res=>{
+            {console.log(res)}
+            setnews(res.data.data)
+          })
+          .catch(err=>{})
         
 	};
     const handleSubmit = (e) =>{
@@ -100,6 +109,9 @@ function Authenticity()
                      </form>
                      {auth}
                 </div>
+                <section>
+                    <p>Hiii</p>
+                </section>
                 <section class="footer">
                     <div>
                         <div class="d">Services</div>

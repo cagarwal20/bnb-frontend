@@ -323,4 +323,8 @@ ul {
     display: flex;
     justify-content: center;
 }
-
+ .oi{
+    color:white;
+    display:flex;
+    justify-content: center;
+ }

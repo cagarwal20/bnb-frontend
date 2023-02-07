@@ -81,7 +81,7 @@ class Product extends Component
                         <div>   
                             <div>
                                 <section>
-                                    <Carousel >
+                                    <Carousel display="flex" justify-content="center">
                                         <div class="pl-1"><img src={data.image_url}></img></div>
                                         <div class="pl-1"><img src={data.image_url}></img></div>
                                     </Carousel>
@@ -89,14 +89,15 @@ class Product extends Component
                                     <text class="products-list">{data.size}</text>
                                     <text class="products-list-dis">Rs.{data.mrp}</text> <text class="products-list">{data.discount}%</text>                                  
                                     <text class="products-list">Rs.{data.price}</text>
-                                    <Dropdown menu={{items:this.state.variant_data}}>
-                                        <a onClick={(e) => e.preventDefault()} trigger={['click']}>
-                                        <Space class="dd">
-                                            Hover me
-                                            <DownOutlined />
-                                        </Space>
-                                        </a>
-                                    </Dropdown>
+                                    {this.state.variant_data.map((data, index)=> (
+                                    <select name="cars" id="cars" class="dld">
+                                        <option value="volvo">{data["size"]}</option>
+                                    </select>))};
+                                    <div >
+                                            <p class="pl">Protein per scoop: {data.details.protein_per_scoop}</p>
+                                            <p class="pl">No of scoops: {data.details.no_of_scoops}</p>
+                                            <p class="pl">Details: {data.details.details}</p>
+                                    </div>
                                 </section>
                             </div>
                         </div>  

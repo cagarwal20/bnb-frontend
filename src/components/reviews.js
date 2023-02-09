@@ -59,7 +59,7 @@ function Reviews()
 		.catch(err => {})
 	};
     const reviewloader = () => {
-        axios.get('https://bnb-backend-jk9fye6da-cagarwal20.vercel.app/reviews/')
+        axios.get('http://localhost:8000/reviews/')
 		.then(res => {
             console.log(res.data.data)
             setreviews(res.data.data);

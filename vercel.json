@@ -1,17 +1,21 @@
-
 {
-    "version": 2,
-    "builds": [
-      {
-        "src": "./build",  
-        "use": "@vercel/static"
-      }
-    ],
-    "rewrites": [
-      {
-        "source": "/(.*)",
-        "destination": "./"
-      }
-    ]
-    
-  }
+  "version": 2,
+  "builds": [
+    {
+      "src": "./build",  
+      "use": "@vercel/static"
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/"
+    }
+  ]
+}
+
+
+
+
+
+

@@ -3,14 +3,14 @@
     "version": 2,
     "builds": [
       {
-        "src": "/build",  
+        "src": "./build",  
         "use": "@vercel/static"
       }
     ],
     "rewrites": [
       {
         "source": "/(.*)",
-        "destination": "/"
+        "destination": "./"
       }
     ]
     

@@ -79,7 +79,7 @@ class Homepage extends Component
     return (     
         <div class="main-page">
                 <section class="home-page-top">
-                    <div class="logo-right"><img src="bnb13.PNG"></img></div>
+                    <div class="logo-right"><img src="bnb13.PNG "></img></div>
                     
                     <span><a href="/">Home</a></span>
                     <div class="dropdown">

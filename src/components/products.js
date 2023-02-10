@@ -29,7 +29,7 @@ class Product extends Component
     };
     componentDidMount(){
         let data ;
-		axios.get('http://localhost:8000/products/' , { params: { product_type: this.props.asset_type } })
+		axios.get('https://bnb-backend-sandy.vercel.app/products/' , { params: { product_type: this.props.asset_type } })
 		.then(res => {
             
 			data = res.data.data;

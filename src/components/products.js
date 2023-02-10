@@ -41,7 +41,7 @@ class Product extends Component
 		})
 		.catch(err => {})
         let variant_data;
-        axios.get('http://localhost:8000/products/variant/' , { params: { asset_type: this.props.asset_type } })
+        axios.get('https://bnb-backend-sandy.vercel.app/products/variant/' , { params: { asset_type: this.props.asset_type } })
 		.then(res => {
 			variant_data = res.data.data;
 			this.setState({

@@ -29,7 +29,7 @@ function Authenticity()
     const componentDidMount = () => {
 
 
-		axios.get('http://localhost:8000/authenticity/check/' , {params:{"code":code}})
+		axios.get('https://bnb-backend-sandy.vercel.app/authenticity/check/' , {params:{"code":code}})
 		.then(res => {
 			if(res.data["success"]=="authentic")
             {   

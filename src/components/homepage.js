@@ -28,11 +28,11 @@ class Homepage extends Component
           data_category : true,
           slideImages : [
             {
-              url: 'https://images.unsplash.com/photo-1506710507565-203b9f24669b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1536&q=80',
+              url: 'bnb14.jpeg',
               caption: 'Slide 2'
             },
             {
-              url: 'https://images.unsplash.com/photo-1536987333706-fc9adfb10d91?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80',
+              url: 'bnb15.jpeg',
               caption: 'Slide 3'
             },
           ]
@@ -78,41 +78,7 @@ class Homepage extends Component
    render(){
     return (     
         <div class="main-page">
-                <section class="home-page-top">
-                    <div class="logo-right"><img src="bnb13.PNG "></img></div>
-                    
-                    <span><a href="/">Home</a></span>
-                    <div class="dropdown">
-                        <span><a href="/products">Products</a></span>
-                        <div class="dropdown_item">
-                            <a href="/products/whey/">Whey</a>
-                            <a href="/products/creatine/">Creatine</a>
-                            <a href="/products/preworkout/">Pre Workout</a>
-                            <a href="/authenticity/">Check Authenticity</a>
-                        </div>
-                    </div>
-                    <div class="dropdown">
-                        <span><a>About us</a></span>
-                        <div class="dropdown_item">
-                            <a href="/about-us/faqs/">FAQs</a>
-                            <a href="/about-us/journey/">Our Journey</a>
-                            <a href="/about-us/mission/">Mission</a>
-                            <a href="/reviews">Reviews</a>
-                        </div>
-                    </div>
-                    <div class="dropdown">
-                        <span><a>Contact</a></span>
-                        <div class="dropdown_item">
-                            <a href="/contact-us/redressal/">Complaints</a>
-                            <a href="/contact-us/business-enquiries/">Business enquiries</a>
-                            <a href="/contact-us/reach-us/">Call/Email/Whatsapp</a>
-                        </div>
-
-                    </div>
-                    <span ><a class="cart" href="/cart"><ShoppingCartIcon/></a></span>
-                    
-                </section>
-            
+                
         
         
                 <section>
@@ -121,7 +87,7 @@ class Homepage extends Component
                 <div>
                     
                         {this.state.slideImages.map((slideImage, index)=> (
-                            <img src={slideImage.url} alt={slideImage.caption}></img>
+                            <img src={slideImage.url} alt={slideImage.caption} class="homepage-images"></img>
                         )
 
                         )
@@ -137,23 +103,23 @@ class Homepage extends Component
                 </section>
                 <p class="team">Managed with Muscled Toned by Trainers</p>
                 <section class="home-page-bottom">
-                    <li><img src="https://cdn.pixabay.com/photo/2022/12/16/01/41/balloons-7658766_960_720.jpg" width={400}></img></li>
-                    <li><img src="https://cdn.pixabay.com/photo/2022/12/16/01/41/balloons-7658766_960_720.jpg" width={400}></img></li>
-                    <li><img src="https://cdn.pixabay.com/photo/2022/12/16/01/41/balloons-7658766_960_720.jpg" width={400}></img></li>
+                    <li><img src="bnb11.jpeg" width={400}></img></li>
+                    <li><img src="bnb12.jpeg" width={400}></img></li>
+                    <li><img src="bnb11.jpeg" width={400}></img></li>
                 </section>
                 <p class="team">Go online start pumping!!</p>
                 <section>
                     <div class="sm">
-                    <img src="https://cdn.pixabay.com/photo/2022/12/16/01/41/balloons-7658766_960_720.jpg" width={380}></img>
-                    <img src="https://cdn.pixabay.com/photo/2022/12/16/01/41/balloons-7658766_960_720.jpg" width={380}></img>
-                    <img src="https://cdn.pixabay.com/photo/2022/12/16/01/41/balloons-7658766_960_720.jpg" width={380}></img>
-                    <img src="https://cdn.pixabay.com/photo/2022/12/16/01/41/balloons-7658766_960_720.jpg" width={380}></img>
+                    <img src="bnb11.jpeg" width={380}></img>
+                    <img src="bnb12.jpeg" width={380}></img>
+                    <img src="bnb11.jpeg" width={380}></img>
+                    <img src="bnb12.jpeg" width={380}></img>
                     </div>
                     <div class="sm">
-                    <img src="https://cdn.pixabay.com/photo/2022/12/16/01/41/balloons-7658766_960_720.jpg" width={380}></img>
-                    <img src="https://cdn.pixabay.com/photo/2022/12/16/01/41/balloons-7658766_960_720.jpg" width={380}></img>
-                    <img src="https://cdn.pixabay.com/photo/2022/12/16/01/41/balloons-7658766_960_720.jpg" width={380}></img>
-                    <img src="https://cdn.pixabay.com/photo/2022/12/16/01/41/balloons-7658766_960_720.jpg" width={380}></img>
+                    <img src="bnb11.jpeg" width={380}></img>
+                    <img src="bnb12.jpeg" width={380}></img>
+                    <img src="bnb11.jpeg" width={380}></img>
+                    <img src="bnb12.jpeg" width={380}></img>
                     </div>
                 </section>
                 <section class="footer">

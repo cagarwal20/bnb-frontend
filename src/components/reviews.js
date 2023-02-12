@@ -1,4 +1,4 @@
-import React , {Component} from "react";
+import React , {Component, useEffect} from "react";
 import { ReactDOM } from "react";
 import './reviews.css'
 import Product from "./products.js";
@@ -17,6 +17,7 @@ import { Slide } from 'react-slideshow-image';
 import {  Button, Checkbox, Form, Input  } from 'antd';
 import { RateReviewTwoTone, RemoveTwoTone } from "@material-ui/icons";
 import { Carousel ,Dropdown,Space} from "antd";
+import  Navbar  from "./navbar"
 function Reviews()
 {
     
@@ -33,7 +34,7 @@ function Reviews()
     const[rev1,setreview1] = useState({});
     const[slideImages,setslideImages]=useState([
         {
-          url: 'https://images.unsplash.com/photo-1509721434272-b79147e0e708?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80',
+          url: 'bnb14.jpeg',
           caption: 'Slide 1'
         },
        
@@ -58,42 +59,30 @@ function Reviews()
 		})
 		.catch(err => {})
 	};
+
+
     const reviewloader = () => {
         axios.get('http://localhost:8000/reviews/')
 		.then(res => {
             console.log(res.data.data)
             setreviews(res.data.data);
-            setreview1(res.data.data[0])
+            setreview1(res.data.data[1])
 		})
     };
+
+    useEffect(() => {
+        reviewloader();
+    },[]);
+
     const handleSubmit = (e) =>{
         e.preventDefault();
         console.log(name);
         console.log(feedback);
         componentDidMount();
     }
-    reviewloader();
 
     return (     
         <div class="main-page">
-                <section class="home-page-top">
-                    <div class="logo-right"><img src="https://cdn.pixabay.com/photo/2022/12/16/01/41/balloons-7658766_960_720.jpg"></img></div>
-                    
-                    <span><a href="/">Home</a></span>
-                    <div class="dropdown">
-                        <span><a href="/products">Products</a></span>
-                        <div class="dropdown_item">
-                            <a href="/products/whey/">Whey</a>
-                            <a href="/products/creatine/">Creatine</a>
-                            <a href="/products/preworkout/">Pre Workout</a>
-                        </div>
-                    </div>
-                    <span><a href="/contact-us">Contact</a></span>
-                    <span><a href="/about">About</a></span>
-                    <span><a href="/authenticity">Authenticity checker</a></span>
-                    <span><a href="/reviews">Reviews</a></span>
-                    
-                </section>
             
         
         
@@ -102,7 +91,7 @@ function Reviews()
                 </section>
                 <div>
                         {slideImages.map((slideImage, index)=> (
-                            <img src={slideImage.url} alt={slideImage.caption}></img>
+                            <img src={slideImage.url} alt={slideImage.caption} class="header-img"></img>
                         )
 
                         )
@@ -111,19 +100,55 @@ function Reviews()
                        
                 </div>
                 <div>
-                        <Carousel>
-                           
-                                <div>
-                                
-                                        <div>
-                                            <h class="oi">{rev1.name}</h>
-                                        </div>
-                                    
-                                </div>
-                        
-                        </Carousel>
-                    
+                    <h className="review_text">People love us!</h>
                 </div>
+                           
+                                <Carousel autoplay>
+                                
+                                        <div className="card">
+                                            <h3>{rev1['feedback']}
+                                            </h3>
+                                            
+                                            <span>-{rev1['name']}</span>
+                                        </div>
+                                        <div className="card">
+                                            <h3>Chetan</h3>
+                                            <p>kshfakfhaksljfkasdjhflaskjhgdkasjhgkasljhgkslahfglkasjdhfgasdjhgkjhdskg</p>
+                                            <span>this product is too fucking good</span>
+                                        </div>
+                                        <div className="card">
+                                            <h3>Chetan</h3>
+                                            <p>kshfakfhaksljfkasdjhflaskjhgdkasjhgkasljhgkslahfglkasjdhfgasdjhgkjhdskg</p>
+                                            <span>this product is too fucking good</span>
+                                        </div>
+                                        <div className="card">
+                                            <h3>Chetan</h3>
+                                            <p>kshfakfhaksljfkasdjhflaskjhgdkasjhgkasljhgkslahfglkasjdhfgasdjhgkjhdskg</p>
+                                            <span>this product is too fucking good</span>
+                                        </div>
+                                        <div className="card">
+                                            <h3>Chetan</h3>
+                                            <p>kshfakfhaksljfkasdjhflaskjhgdkasjhgkasljhgkslahfglkasjdhfgasdjhgkjhdskg</p>
+                                            <span>this product is too fucking good</span>
+                                        </div>
+                                        <div className="card">
+                                            <h3>Chetan</h3>
+                                            <p>kshfakfhaksljfkasdjhflaskjhgdkasjhgkasljhgkslahfglkasjdhfgasdjhgkjhdskg</p>
+                                            <span>this product is too fucking good</span>
+                                        </div>
+                                        <div className="card">
+                                            <h3>Chetan</h3>
+                                            <p>kshfakfhaksljfkasdjhflaskjhgdkasjhgkasljhgkslahfglkasjdhfgasdjhgkjhdskg</p>
+                                            <span>this product is too fucking good</span>
+                                        </div>
+                                        <div className="card">
+                                            <h3>Chetan</h3>
+                                            <p>kshfakfhaksljfkasdjhflaskjhgdkasjhgkasljhgkslahfglkasjdhfgasdjhgkjhdskg</p>
+                                            <span>this product is too fucking good</span>
+                                        </div>
+                                </Carousel>
+                        
+                    
                 <div>
                     
                        

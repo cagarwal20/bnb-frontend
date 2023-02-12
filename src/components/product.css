@@ -311,3 +311,13 @@ ul {
     display: flex;
     justify-content: center;
 }
+.home-page-top .logo-right{
+    display: flex;
+    justify-content: right;
+}
+
+.centre{
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+}

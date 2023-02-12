@@ -15,8 +15,8 @@ import axios from "axios";
 import { hover } from "@testing-library/user-event/dist/hover";
 import { Slide } from 'react-slideshow-image';
 import {Alert,Button} from 'antd';
-
-
+import { Spin } from 'antd';
+import Navbar from "./navbar";
 function Authenticity()
 {
     
@@ -26,6 +26,7 @@ function Authenticity()
     const[color,setColor] = useState("failure");
     const[h,seth] = useState(1);
     const[news,setnews]= useState([]); 
+    const[loading,setloading] = useState(false);
     const componentDidMount = () => {
 
 
@@ -33,12 +34,14 @@ function Authenticity()
 		.then(res => {
 			if(res.data["success"]=="authentic")
             {   
+                setloading(false)
                 alert('original')
                 setAuth(true);
                 setColor("success");
                 window.location.reload();  
             }
             else{
+                setloading(false)
                 alert('Fake');
                 setColor("failure");
                 window.location.reload();  
@@ -57,6 +60,7 @@ function Authenticity()
 	};
     const handleSubmit = (e) =>{
         e.preventDefault();
+        setloading(true)
         console.log(code);
         componentDidMount();
     }
@@ -64,25 +68,7 @@ function Authenticity()
 
     return (     
         <div class="main-page">
-                <section class="home-page-top">
-                    <div class="logo-right"><img src="https://cdn.pixabay.com/photo/2022/12/16/01/41/balloons-7658766_960_720.jpg"></img></div>
-                    
-                    <span><a href="/">Home</a></span>
-                    <div class="dropdown">
-                        <span><a href="/products">Products</a></span>
-                        <div class="dropdown_item">
-                            <a href="/products/whey/">Whey</a>
-                            <a href="/products/creatine/">Creatine</a>
-                            <a href="/products/preworkout/">Pre Workout</a>
-                        </div>
-                    </div>
-                    <span><a href="/contact-us">Contact</a></span>
-                    <span><a href="/about">About</a></span>
-                    <span><a href="/authenticity">Authenticity checker</a></span>
-                    <span><a href="/reviews">Reviews</a></span>
-
-                    
-                </section>
+                
             
         
         
@@ -95,7 +81,9 @@ function Authenticity()
                     
                 </div>
                 <div>
+                    
                     <form onSubmit={handleSubmit} class="feedback-form">
+                        
                         <label>
                         <input
                             type="text"
@@ -107,6 +95,7 @@ function Authenticity()
                         </span>
                         <p >{color}</p>
                      </form>
+                     <div class="loader">{loading ? <Spin/> : <></> }</div>
                      {auth}
                 </div>
                 <section>

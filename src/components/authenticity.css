@@ -316,3 +316,9 @@ ul {
     display: flex;
     justify-content: center;
 }
+
+.loader{
+    display: flex;
+    justify-content: center;
+    padding-top: 10px;
+}

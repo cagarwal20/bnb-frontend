@@ -328,3 +328,51 @@ ul {
     display:flex;
     justify-content: center;
  }
+
+ /* .container{
+    width:100%;
+    height:min-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap:1em
+ } */
+
+ .card{
+    width:600px;
+    padding: 1em;
+    height:200px;
+    border-radius: 8px;
+    text-align: center;
+
+    /* background-color: #fff; */
+    color:#fff;
+ }
+ .review_text{
+    color: maroon;
+    display: flex;
+    justify-content: center;
+    font-size: xx-large;
+    font-weight: bold;
+    padding-top: 2em;
+ }
+ 
+    .center {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 10%;
+        background-color: black;
+      }
+.header-img{
+    padding-left: 400px;
+    width:auto;
+    display:flex;
+    justify-content: center;
+}
+ 
+.loader{
+    display: flex;
+    justify-content: center;
+}

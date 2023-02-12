@@ -15,7 +15,9 @@ import { Carousel ,Dropdown,Space} from "antd";
 import { DownOutlined, SmileOutlined } from '@ant-design/icons';
 import axios from "axios";
 import  { MenuProps } from "antd";
-
+import Navbar from "./navbar";
+import { Loader } from 'rsuite';
+import { Spin } from 'antd';
 class Product extends Component
 {
     constructor(props) {
@@ -25,6 +27,7 @@ class Product extends Component
           data : [],
           variant_data:[],
           product : "",
+          loading: false,
         }
     };
     componentDidMount(){
@@ -36,7 +39,7 @@ class Product extends Component
 			this.setState({
 				data : data,
                 product : data.product_type,
-
+                loading:false,
 			});
 		})
 		.catch(err => {})
@@ -55,44 +58,31 @@ class Product extends Component
    render(){
     return (
         <div class="main-page">
-            <section class="home-page-top">
-                    <div class="logo-right"><img src="https://cdn.pixabay.com/photo/2022/12/16/01/41/balloons-7658766_960_720.jpg"></img></div>
-                    
-                    <span><a href="/">Home</a></span>
-                    <div class="dropdown">
-                        <span><a href="products">Products</a></span>
-                        <div class="dropdown_item">
-                            <a href="/products/whey/">Whey</a>
-                            <a href="/products/creatine/">Creatine</a>
-                            <a href="/products/preworkout/">Pre Workout</a>
-                        </div>
-                    </div>
-                    <span><a href="/contact-us">Contact us</a></span>
-                    <span><a href="/about">About</a></span>
-                    
-            </section>
             <section>
                 <p class="mid_text">Get ready to for the extravaganza</p>
             </section>
             <img  src="https://cdn.pixabay.com/photo/2022/12/16/01/41/balloons-7658766_960_720.jpg" width={1510} height={1000} alt="kf"></img>
            <section>
                 <p class="products-text">Our Collection</p>
+                <div class="loader">{this.state.data.length===0 ? <Spin/> : <></>}</div>
                 {this.state.data.map((data, index)=> (
                         <div>   
                             <div>
                                 <section>
-                                    <Carousel display="flex" justify-content="center">
-                                        <div class="pl-1"><img src={data.image_url}></img></div>
-                                        <div class="pl-1"><img src={data.image_url}></img></div>
+                                    <Carousel>
+                                        <img src={data.image_url} class="centre"></img>
+                                        <img src={data.image_url} class="centre"></img>
                                     </Carousel>
                                     <text class="products-list">{data.product_type} {data.flavour} flavour!</text>
                                     <text class="products-list">{data.size}</text>
                                     <text class="products-list-dis">Rs.{data.mrp}</text> <text class="products-list">{data.discount}%</text>                                  
                                     <text class="products-list">Rs.{data.price}</text>
                                     {this.state.variant_data.map((data, index)=> (
-                                    <select name="cars" id="cars" class="dld">
-                                        <option value="volvo">{data["size"]}</option>
-                                    </select>))};
+                                    <div class="centre">
+                                        <select name="cars" id="cars" >
+                                            <option value="volvo" >{data["size"]}</option>
+                                        </select>
+                                    </div>))};
                                     <div >
                                             <p class="pl">Protein per scoop: {data.details.protein_per_scoop}</p>
                                             <p class="pl">No of scoops: {data.details.no_of_scoops}</p>

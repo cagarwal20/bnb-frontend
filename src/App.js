@@ -14,12 +14,14 @@ import About_Us_Mission from './components/about-us-mission';
 import About_Us_Journey from './components/about-us-journey';
 import Cart from './components/cart';
 import Complaint from './components/complaints';
+import Navbar from './components/navbar';
 function App() {
     const [code,setCode] = useState(0)
 
     
     return (
       <BrowserRouter>
+      <Navbar/>
       <Routes>
         <Route path="/" element={<Homepage />}/>
         <Route path="/products/" element={<Product />} />
